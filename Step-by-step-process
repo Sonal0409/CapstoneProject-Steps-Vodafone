@@ -372,4 +372,25 @@ Execute the below commands to setup kubectl and apiserver communication
    # Validate:  kubectl get nodes
 
 
+> We also need to install Helm utility using below set of commands:
+
+
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get-helm-3 > get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh
+
+> Now we have to enable root password and root user authentication to proceed with SSH connectivity from GitHub actions pipeline. 
+
+
+sed -i 's|PasswordAuthentication no|PasswordAuthentication yes|g' /etc/ssh/sshd_config
+sed -i 's|#PermitRootLogin prohibit-password|PermitRootLogin yes|g' /etc/ssh/sshd_config
+service sshd restart
+passwd root
+ssh-keygen
+copy the ssh key in authorized keys file
+# cat /root/.ssh/id_rsa.pub
+# echo "key" >> ~/.ssh/authorized_keys
+
+ssh root@localhost "date"		(Enter Root user password configured by you in previous command)
+
 
