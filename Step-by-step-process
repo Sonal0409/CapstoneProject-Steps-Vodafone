@@ -53,3 +53,14 @@ CMD ["catalina.sh", "run"]
 
 
 Save the file
+
+> As we have to push the image to dockerhub, we will create secrets in the repository to save dockerhub username and dockerhub password
+
+> For this go to Settings tab of repository > go to secrets and variables > click on to Actions > Secrets Tab > Repository secrets > click on new repository secret
+
+	> give name as DOCKERHUB_USERNAME ==> Secret as > your dockerhub username > Click on Add secret
+
+	> Again  click on new repository secret > give name as DOCKERHUB_TOKEN > Secret as > your dockerhub password> click on add secret
+
+	> Give the secret names in UPPERCASE, as we use the same secret name in the actions YAML file.
+
