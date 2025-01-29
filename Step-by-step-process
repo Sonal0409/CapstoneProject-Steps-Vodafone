@@ -103,6 +103,16 @@ jobs:
      tags: ${{ secrets.DOCKERHUB_USERNAME }}/capstoneimage:latest
 
 
+Step 4: Create kubernetes Helm chart to deploy above image and push charts to github repo
+
+> Connect to devOps lab > here we will install helm 
+
+Execute below commands:
+
+# curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get-helm-3 > get_helm.sh
+# chmod 700 get_helm.sh
+# ./get_helm.sh
+
 
 
 
