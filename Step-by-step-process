@@ -326,7 +326,11 @@ resource "aws_autoscaling_group" "mygroup" {
   launch_configuration      = aws_launch_configuration.aws_autoscale_conf.name
 }
 
+Save the file
 
+# terraform init
+
+# terraform apply --auto-approve
 
 
 
