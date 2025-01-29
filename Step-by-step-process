@@ -35,3 +35,21 @@ jobs:
     cache: maven
   - name: Build the code
     run: mvn package --file pom.xml
+
+Step 3: We will now create a dockerfile and then build image using github actions. 
+        We will also push the image to dockerhub using github Actions
+
+Execute below  steps:
+
+ > In the repository create a new file with name as Dockerfile
+
+Add the below lines in the dockerfile and save the file
+
+
+FROM tomcat:8
+COPY target/java-example.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+
+
+Save the file
